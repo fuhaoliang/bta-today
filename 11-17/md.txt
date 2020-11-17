@@ -1,0 +1,58 @@
+9.一次完整的HTTP事务是怎么一个过程
+  TCP三次握手四次挥手
+  1: DNS域名解析 -> 发起TCP3次握手 -> 建立TCP链接发起http请求
+  2: TCP/UDP族协议：链路层->网络层(ip)->传输层(TCP)->应用层
+  3: 3次握手
+    1: 客户端发送SYN包给服务器
+    2: 服务器接收到SYN包，生成ACK包(SYN+1),并生成服务器到SYN包，发送给客户端
+    3: 客户端收到响应端ACK包，与SYN包，开始发送数据
+
+10.HTTPS是如何实现加密
+
+  1:得到公钥：letmekang和私钥：buxukang。
+  2:服务器端把公钥letmekang和安全证书一起携带到客户端。
+  3:校验安全证书是否过期，过期则返回错误响应，否则下一步。
+  4:生成随机的密钥gugu，用公钥加密gugu得到9cnwh%ee
+  5:把9cnwh%ee传给服务器端。
+  6:用私钥buxukang解密得到gugu
+  7,8.利用gugu作为共同的密钥加密下文信息。
+
+9.给页面加背景色
+  page { background-color: #fff }, 页面之间相互不影响
+10.微信小程序获取用户信息
+    1:先通过 wx.login，获取用户 openID 。这时无需弹框授权，开发者拿到 openID 可以建立自身的帐号 ID。
+    2:拿到 openID 后，判断是新用户还是老用户。如果是老用户，可以直接登录；如果是新用户，跳转到授权登陆页面
+    3:在页面中加入一个 button 按钮，并将 open-type 属性设置为 getUserInfo.
+
+11.移动端扩展点击区域
+   1: border边框透明
+   2: 添加伪类
+   3: padding:n; margin:-n
+12 上下拉动滚动条时卡顿、慢
+    overflow-scrolling: touch // 修改为惯性滚动
+
+
+9.for...of 循环
+  可循环迭代器，Array, new Set， 非普通对象，
+  for...in 循环
+  可循环普通对象到可遍历所有属性，包括原型链上的, 用hasOwnProperty限定
+
+10. es6, CommonJS, AMD, CMD
+  CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。
+  CommonJS 模块是运行时加载，ES6 模块是编译时输出接口
+
+  1: ES6: import / export
+  2: CommonJS: require / module.export
+  3: AMD: 提前执行 define(['/a','/b'], function(a,b){})
+  4: CMD: 延迟执行 define(require, exports, module)
+  5: UMD: 通用模块定义规范（Universal Module Definition）是集结了 CommonJs、CMD、AMD 的规范于一身
+          挂载在window或者global，视运行环境而定
+
+9.console.log(1+'2')和console.log(1-'2')的打印结果
+  隐式转化
+10.Js的事件委托是什么，原理是什么
+  1: 利用事件冒泡的特性
+
+
+1.React 中 keys 的作用是什么？ diff算法，优化排序
+2.React 中 refs 的作用是什么？ id

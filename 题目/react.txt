@@ -4,10 +4,8 @@ https://segmentfault.com/a/1190000023041842
 
 
 
-react 基础面试题
 
-1.React 中 keys 的作用是什么？
-2.React 中 refs 的作用是什么？
+
 3.React 中有三种构建组件的方式
 4.调用 setState 之后发生了什么？
 5.react diff 原理（常考，大厂必考）

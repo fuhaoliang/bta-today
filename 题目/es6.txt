@@ -4,8 +4,7 @@ ES6新增方法面试题
 
 
 
-9.for...of 循环
-10.import和export
+
 11.Promise对象
 12.解构赋值
 13.set数据结构（可用于快速去重）
