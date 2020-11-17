@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    //    iframe会阻塞主页面的onload事件
+    //    主页面和iframe共享同一个连接池
+    //    神奇的地方就在<body οnlοad="">:这个iframe一开始没有内容，
+    //    所以onload会立即触发。然后你创建一个script元素，用他来加载内容、广告、插件什么的，
+    //    然后再把这个script添加到HEAD中去，这样iframe内容的加载就不会阻塞主页面的onload！
+
+    (function(d) {
+        var iframe = d.body.appendChild(d.createElement('iframe')),
+        doc = iframe.contentWindow.document; 
+        // style the iframe with some CSS
+        iframe.style.cssText ="position:absolute;width:200px;height:100px;left:0px;"; 
+        doc.open().write(
+            '<body οnlοad="'+ 　　
+            'var d = document;d.getElementsByTagName(\'head\')[0].'+ 　　
+            'appendChild(d.createElement(\'script\')).src'+'=\'\/path\/to\/file\'">'
+        );
+        doc.close(); //iframe onload event happens 
+    })(document);</script>
+</body>
+</html>

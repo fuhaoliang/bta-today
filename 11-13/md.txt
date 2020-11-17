@@ -1,0 +1,87 @@
+1.什么是盒模型
+
+  盒模型：content+padding+border+marign
+  1:标准盒模型: width = content / box-sizing: content-box
+  2:IE/怪异模型: width = content + padding + border / box-sizing: border-box
+  * box-sizing 不会继承给子类元素
+
+  offsetTop: 距离定位父元素到距离
+  getBoundingClientReact().top:距离可视区域到高度
+
+2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？行内元素和块级元素有什么区别？
+  块内元素：address,meun,header,footer, p ,div, h1,h2, ul/li ,table,tr
+    1：识别宽高
+    2：margin/padding都有效
+    3：自占一行, 自动换行
+  行内元素：span,i, b, a, em, strong, select, input,label
+    1: 不识别宽高,由内容撑起来,line-height有效
+    2: marign/padding的top,button无效
+    3: 不可以自动换行
+  行内块元素： img, input, textarea,button
+    1: 识别宽高
+    2: 不可以自动换行
+
+  空元素: link, meta, br, hr, img, 自闭合标签
+
+
+3.简述src和href的区别
+  1:href超文本引用只是建立联系
+  2:src引用外部资源替换当前元素
+  3:href异步加载，script下的src加载与解析同步堵塞 
+
+4.link与@import的区别
+  1:@import 只能加载css
+  2:link是异步并行加载当,css树会堵塞，@import必须等到页面加载完加载，会闪屏
+  3:@import css2.1才支持有兼容问题
+  4:link已经通过setAttribute去改变，加载的css文件
+
+
+1.注册小程序
+2.微信开发者工具
+3.小程序与普通网页开发的区别
+  网页：js线程与GUI渲染线程是互斥的，互相堵塞
+  小程序: webkit渲染线程与jsCore线程独立/ 也是缺少控制DOM的相关api
+
+  平台的话只依据微信运行平台的webkit的版本
+
+
+
+1.1px border问题
+.border{ position: relative; }
+.border::after { position:absolute; width:200%;height:200%; transform: scale(.5); transform-orgin: left top }
+
+2.2X图 3X图适配
+@media only and (-webkit-min-device-pixel-radio: 2 / 3){}
+
+3.图片在安卓上，有些设备模糊问题
+devicePixelRadio: 2 / 3 比例不同
+
+
+1.简述同步，异步，堵塞，非堵塞的区别
+  同步与异步是被调用方式决定的，决定马上给你答案，还是通知给你答案
+  堵塞与非堵塞是调用方式决定的，等到过程中，是否可以干别的事情
+
+2.怎么添加、移除、复制、创建、和查找节点
+  appendChild()
+  removeChild()
+  cloneNode(false)
+  createElement()
+  querySelector
+  父.replace(新, 老)
+  父.insertBefore(新，插入坐标元素)
+
+3.实现一个函数clone 可以对Javascript中的五种主要数据类型（Number、string、Object、Array、Boolean）进行复制
+  Object.prototype.toString().call(value).match(/\[object (\S*)\]/)[1]
+
+
+1.let const var比较
+2.反引号（`）标识
+3.函数默认参数
+  1: 仅当参数是underfined
+  2: arguments始终保存的是原来的参数
+  3: 可以使用函数 function(a, b = getval()){}
+  4: 默认参数后面的可以使用前面的值，前面不能使用后面的
+
+
+// 优点：业务类别涉猎挺多，小程序/ssr服务端渲染/scss后台管理等
+// 缺点：前端基础较差，核心技术点未掌握，基础原理了解较为模糊，vue/react框架知识不足

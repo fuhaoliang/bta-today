@@ -1,0 +1,102 @@
+iframe 加载解决方案： https://www.cnblogs.com/catgatp/p/9581141.html
+
+4.什么是css Hack
+
+hack是通过在CSS样式中加入一些特殊的符号，让不同的浏览器识别不同的符号
+属性前缀，是真的不同浏览器识别的属性方法
+浏览器的识别符：-webkit-/-ms-/-moz-/-o-
+
+5.什么叫优雅降级和渐进增强
+  1:向下兼容与向上兼容
+  2:先开发高版本，在高版本基础下，去兼容低版本，反之
+
+6.px,em, rem的区别
+  1: rem根据HTML根元素进行比较的
+  2: em根据父元素继承, 自身设置font-size，那么其他元素与他比较自身font-size比较
+
+
+4.小程序尺寸单位rpx 
+  屏幕宽度/750
+  1rpx = 0.42px 350
+  1rpx = 0.5px 375
+  1rpx = .552px 414
+
+5.样式导入（WeUI for）
+6.选择器
+
+
+4.固定定位布局 键盘挡住输入框内容
+  1: 页面可滚动
+5.click的300ms延迟问题和点击穿透问题
+  // https://www.jianshu.com/p/150c305f6930
+  touchstart -> touchmove -> touchend -> 300ms -> click
+  1: 移动端浏览器会有一些默认的行为，比如双击缩放、双击滚动。这些行为，尤其是双击缩放，主要是为桌面网站在移动端的浏览体验设计的
+  2: 禁止缩放 user-scalable=no
+  3：默认窗口宽度 width=device-width
+  4: FastClick，原理劫持touchend事件，阻止300ms后的click
+  5: touch-action: manipulation IE
+
+  点击穿透问题
+  300ms后又出发了下层的事件
+  1: 阻止事件冒泡 preventDefault()
+  2: pointer-events: none
+  3: 上面解决300ms方案
+
+
+6.phone及ipad下输入框默认内阴影
+   -webkit-appearance: none; 
+
+
+
+
+
+4.箭头函数
+  1: 箭头函数this始终指向创建的时候，无法使用call,apply
+  2: 自身没有arguments, 只能使用缺省参数...argus,
+  3: 返回可以省略{ return } / 但是对象对象加()
+  4: 箭头函数没有prototype
+5.属性简写 与 方法简写
+  1: 同名的属性可以省略不写
+  2: 对象中的方法,function可以省略
+6.方法简写
+
+
+4.如何消除一个数组里面重复的元素
+  [...new Set(Arr)] / for+indexOf
+5.写一个返回闭包的函数
+  见'./闭包.js'
+
+6.使用递归完成1到100的累加
+  // map,every,filter,forEach等方法不会对不存在对元素(empty)遍历
+  Array.from(new Array(100)).reduce((sum, item, index) => sum + index + 1, 0)
+
+1.react生命周期函数
+  // https://www.jianshu.com/p/514fe21b9914
+  // https://blog.csdn.net/xiaochunblog/article/details/85129378
+  1>初始化
+    construtor初始化
+  2>挂载
+    componentWillMount 开始构建virtualDOM， this.setState无效
+    render() virtualDOM开始挂载到真实DOM
+
+    子组件什么周期
+    componentDidMount 真实DOM构建完成
+
+
+  3>运行阶段
+    componentWillReceiveProps // 父组件改变时候调用
+    sholudComponentUpdate // 手动阻止组件渲染 
+    componentWillUpdate // 组件更新前
+    componentWillUpdate // 组件更新后
+
+  4>销毁
+    子组件生命周期
+    compoentUnmount // 销毁相关变量/定时器  
+
+2.react生命周期中，最适合与服务端进行数据交互的是哪个函数
+  componentDidMount
+
+3.运行阶段生命周期调用顺序
+
+
+

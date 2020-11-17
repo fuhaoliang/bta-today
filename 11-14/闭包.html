@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">
+    <p class="item">1</p>
+    <p class="item">2</p>
+    <p class="item">3</p>
+    <p class="item">4</p>
+  </div>
+  <script>
+    var pDOMs = document.querySelectorAll('.item')
+    var boxDOM = document.querySelector('#box')
+    // pDOMs[0].addEventListener('click', function(){
+    //     console.info('123')
+    //   })
+    // for(let i = 0; i<pDOMs.length; i++){
+    //   pDOMs[i].addEventListener('click', function(){
+    //     console.info(i)
+    //   })
+    // }
+    // 
+    for(var i = 0; i<pDOMs.length; i++){
+      pDOMs[i].onclick = function() {
+        console.info(i)
+      }
+    }
+
+  </script>
+</body>
+</html>

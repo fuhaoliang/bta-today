@@ -1,0 +1,37 @@
+1: 横向模糊 {2,5}
+
+2: 纵向模糊 [abc]
+
+3: 范围表示 [1-6a-z]
+
+4: 排除表示 [^abc] 排除a,b,c
+
+大写都是排除的意思
+
+
+var regex = /#([a-f0-9A-F]{6}|[a-f0-9A-F]{3})/
+
+var regex = /^([01][0-9]|[2][0-3]):[0-5][0-9]$/
+
+var regex = /^([01]?[0-9]|[2][0-3]):[0-5]?[0-9]$/
+
+var regex = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[0-1])$/
+
+// window: 操作系统文件路径
+// \文件夹匹配 [^\\:<>|"\r\n/]
+
+F:\study\javascript\regex\regular expression.pdf 
+F:\study\javascript\regex\
+F:\study\javascript
+F:\
+
+var regex = /^[a-zA-Z]:\\([^\\:<>|"\r\n/]+\\)*([^\\:<>|"\r\n/]+)?$/
+
+
+var regex = /^[a-zA-Z]:\\([^\\:<>|"\r\n/]+\\)*([^\\:<>|"\r\n/]+)?$/
+
+id为数字字母
+
+<div id="container" class="main"></div>
+
+var regex = /id=".*?"/

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+    #box.box2::before{
+        content: '';
+        display: block;
+        padding-top: 20px;
+    }
+    span{
+        margin-left: 20px;
+        margin-right: 30px;
+        margin-top: 20px;
+        padding-top: 20px;
+        line-height: 30px;
+    }
+</style>
+<body>
+    <div>
+        <div id="box">
+
+        </div>
+    
+        <div id="box" class="box2">
+    
+        </div>
+    </div>
+
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>2</li>
+        </ul>
+    </div>
+   
+    <span>我是行内元素</span>
+    <span>我是行内元素</span>
+    <address>123456</address>
+    <menu>
+        12345
+    </menu>
+    <var>1234</var>
+    <script>
+        var dom = document.getElementById('box')
+
+        var w1 = dom.offsetWidth
+        var w2 = dom.getBoundingClientRect().width
+
+        console.info('object', w1, w2, dom.getBoundingClientRect())
+    </script>
+</body>
+</html>
