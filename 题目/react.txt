@@ -6,8 +6,7 @@ https://segmentfault.com/a/1190000023041842
 
 
 
-3.React 中有三种构建组件的方式
-4.调用 setState 之后发生了什么？
+
 5.react diff 原理（常考，大厂必考）
 6.为什么建议传递给 setState 的参数是一个 callback 而不是一个对象
 7.除了在构造函数中绑定 this，还有其它方式吗
