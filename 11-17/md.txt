@@ -54,5 +54,5 @@
   1: 利用事件冒泡的特性
 
 
-1.React 中 keys 的作用是什么？ diff算法，优化排序
+1.React 中 keys 的作用是什么？ 标记节点
 2.React 中 refs 的作用是什么？ id

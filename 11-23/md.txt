@@ -1,0 +1,43 @@
+14.如何优化图像，图像格式的区别
+   1: jpeg: 有损压缩/24位真彩色，适合丰富的图片
+   2: gif: 无损压缩/256色，仅仅支持全透明，支持动画，图标/色彩少
+   3: png: 无损压缩/256色，不支持动画
+   有损压缩：将相似色相的像素合成，无法还原
+   无损压缩：通过算法将数据进行优化，可以还原
+15.列举你了解Html5. Css3 新特性
+   html5: 
+     1:语义化标签header,footer,main
+     2:input多种属性email,url,search
+     3:储存能力Storage
+     4:cache manifest, PWA
+     5:eventSource消息推送
+   css3.0:
+     transition, animation,  background-clip , Flex, grid, @media
+
+13.小程序申请微信支付
+
+
+14.小程序的目录解构及四种文件类型
+   .json: 用于页面/小程序到配置设置
+   .wxml: html
+   .wxss: css3
+   .js: js脚步逻辑
+
+
+15.active兼容处理 即 伪类：active失效
+   body监听touchstart事件
+
+16.webkit mask兼容处理
+
+
+13.set数据结构（可用于快速去重）
+14.Spread Operator 展开运算符(...)
+
+
+13.谈谈垃圾回收机制的方式及内存管理
+14.写一个function ，清除字符串前后的空格
+
+
+5.react diff 原理（常考，大厂必考）
+6.为什么建议传递给 setState 的参数是一个 callback 而不是一个对象
+

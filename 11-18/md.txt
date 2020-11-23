@@ -1,23 +1,46 @@
 // 隐式转化！！
 
 3.React 中有三种构建组件的方式
+ es5: React.createClass
+ es6: React.Component
+ 无状态组件，函数组件SFO
+
 4.调用 setState 之后发生了什么？
+  // https://zhuanlan.zhihu.com/p/61847529
+  异步的作用是提高性能，降低冗余。
+  https://juejin.im/post/6844903636749778958#comment
 
 11.浏览器是如何渲染页面的
+  1: DPS域名解析-->TCP三次握手-->http请求线程--->资源回执--> DOMTree + CSSTree --> GUI渲染线程 --->渲染页面 ---> JS执行主线程 --->js加载/执行---> onload结束
 
 12.浏览器的内核有哪些？分别有什么代表的浏览器
+  blank --> chrome
+  Gecko --> firefox
+  Trident ---> ie
+  webkit --> safari
+
+   
 
 11.代码审核和发布
+    devops 自动化发布流程
 12.小程序微信认证
 
-13 长时间按住页面出现闪退
+
+13.长时间按住页面出现闪退
+  -webkit-touch-callout: none   
 14.ios和android下触摸元素时出现半透明灰色遮罩
+   -webkit-tap-highlight-color:rgba(255,255,255,0)
 
 11.Promise对象
+   https://www.cnblogs.com/everlose/p/12950564.html
+   1:then方法提供一个自定义回调，若传入非回调函数，则忽略
+   2: 回到函数return 的都是promise对象
 12.解构赋值
 
 11.如何改变函数内部的this指针的指向
 12.列举几种解决跨域问题的方式，且说明原理
+  1: 联调： nginx代理，webapckp-proxy代理
+  2: jsonp
 
 1.给一个连字符串例如：get-element-by-id转化成驼峰形式。
 2.匹配二进制数字
