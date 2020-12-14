@@ -1,0 +1,50 @@
+16.可以通过哪些方法优化css3 animation渲染
+
+https://blog.csdn.net/u014628388/article/details/81665345
+元素显示模糊主要是因为使用了transform 3D变换,3D变换会开启GPU加速，
+GPU加速动画时，并不是把原生DOM传递给GPU，它生成一个元素图像，把该图像发送到GPU，GPU将图像应用为多边形纹理贴图代表元素，
+GPU可以流畅快速的对这些多边形进行旋转，缩放，转换，倾斜等变换，但由于只是传递元素图像到GPU进行处理，
+所以它并不能重新渲染内容，图像清晰度不能保证，元素显示清晰度自然就下降了。
+
+https://segmentfault.com/q/1010000007962353
+
+17.列举几个前端性能方面的优化
+  chrome 请求并发数是6个
+  https://www.cnblogs.com/liubingyjui/p/11042198.html
+  一：页面级优化
+  1: 减少http请求数
+
+15.小程序文件的作用域
+   getApp()可以获得全局应用实例
+
+16.小程序常用组件
+   cover-view, scroll-view
+
+17.pc端与移动端字体大小的问题
+   rem字体
+
+18.transiton闪屏
+  https://www.cnblogs.com/gaoxue/p/3753734.html
+  https://www.cnblogs.com/conansky/p/6294535.html
+  webkit并不会绘制一个很大的层来存储一个很大的页面，比如说平铺层则会拆分成很多的块来绘制，即尽占用尽可能小的内存，只是将可视范围内的那部分渲染出来
+
+15.字符串新增方法
+  1. includes, startsWith, endsWith
+  2. repeat
+  3. padStart/padEnd(最小长度, 补全字符)
+  4. 
+
+1.forEach()
+
+
+15.js实现继承的方法有哪些
+
+
+16.判断一个变量是否是数组，有哪些办法
+
+
+7.除了在构造函数中绑定 this，还有其它方式吗
+
+8.setState第二个参数的作用
+
+

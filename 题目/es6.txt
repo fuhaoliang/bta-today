@@ -7,12 +7,7 @@ ES6新增方法面试题
 
 
 
-15.字符串新增方法
 
-
-ES6数组面试题
-
-1.forEach()
 2.map()
 3.filter()
 4.reduce()

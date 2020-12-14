@@ -35,9 +35,19 @@
 
 
 13.谈谈垃圾回收机制的方式及内存管理
+   1: 如果一个对象没有任何的变量或属性对它引用，此对象就是一个垃圾
+   2: 标记清除 (进入环境，离开环境)
+   3: 引用计数(weakMap, weakSet)
+
 14.写一个function ，清除字符串前后的空格
 
 
 5.react diff 原理（常考，大厂必考）
 6.为什么建议传递给 setState 的参数是一个 callback 而不是一个对象
+
+
+vue对双向绑定/compile/diff
+
+1: https://www.jianshu.com/p/743166a8968c --> compile
+2: https://www.cnblogs.com/canfoo/p/6891868.html --->对双向绑定
 

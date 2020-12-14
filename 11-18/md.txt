@@ -33,6 +33,7 @@
 
 11.Promise对象
    https://www.cnblogs.com/everlose/p/12950564.html
+   https://www.cnblogs.com/everlose/p/12501106.html
    1:then方法提供一个自定义回调，若传入非回调函数，则忽略
    2: 回到函数return 的都是promise对象
 12.解构赋值
