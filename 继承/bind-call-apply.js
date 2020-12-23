@@ -14,11 +14,3 @@ sayName.apply(obj); // 'call_me_R'
 var _sayName = sayName.bind(obj);
 
 _sayName(); // 'call_me_R'
-
-console.info();
-console.info();
-console.info();
-console.info();
-console.info();
-console.info();
-console.info();
