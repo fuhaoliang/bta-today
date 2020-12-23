@@ -41,10 +41,13 @@ https://segmentfault.com/q/1010000007962353
 
 
 16.判断一个变量是否是数组，有哪些办法
-
+   1: [] instanceof Array
+   2: Object.prototype.toString.call([]) === '[object Array]'
 
 7.除了在构造函数中绑定 this，还有其它方式吗
+  call, apply, bind
 
 8.setState第二个参数的作用
+  数据更新完毕且页面页面开始渲染
 
 

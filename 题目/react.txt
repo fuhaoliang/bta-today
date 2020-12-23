@@ -9,8 +9,6 @@ https://segmentfault.com/a/1190000023041842
 
 
 
-9.(在构造函数中)调用 super(props) 的目的是什么
-10.简述 flux 思想
 11.在 React 当中 Element 和 Component 有何区别？
 12.描述事件在 React 中的处理方式。
 13.createElement 和 cloneElement 有什么区别？

@@ -1,0 +1,32 @@
+18.如何实现同一个浏览器多个标签页之间的通信
+   1:  addEventListener监听stroage信息
+   2:  cookies+setInterval()
+
+19.浏览器的存储技术有哪些
+  1: stroage, cookies, indexDB
+
+//小程序  
+17.授权得到用户信息
+
+18.数据绑定
+
+
+19.圆角bug
+20.如何解决禁用表单后移动端样式不统一问题 ?
+
+
+2.map()
+3.filter()
+4.reduce()
+5.some()
+6.every()
+7.all()方法
+
+
+17.let ，const ，var 有什么区别
+18.箭头函数与普通函数有什么区别
+
+
+
+9.(在构造函数中)调用 super(props) 的目的是什么
+10.简述 flux 思想
