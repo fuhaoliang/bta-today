@@ -7,13 +7,17 @@
 
 //小程序  
 17.授权得到用户信息
+// button-openType:'getUserInfo' 获取（encryptedData, iv, userInfo ）
+// 调用wxLogin 获取code
+// 将code + encryptedData + iv + userInfo 传递后台给绑定用户数据
 
 18.数据绑定
 
 
 19.圆角bug
-20.如何解决禁用表单后移动端样式不统一问题 ?
 
+20.如何解决禁用表单后移动端样式不统一问题 ?
+  input:disabled
 
 2.map()
 3.filter()
