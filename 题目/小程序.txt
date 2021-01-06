@@ -7,12 +7,7 @@
 
 
 
-1.view
-2.scroll-view
-3.swiper组件
-4.movable-view
-5.cover-view
-6.cover-image
+
 小程序基础
 
 

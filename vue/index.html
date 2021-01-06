@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.8/vue.min.js"></script>
+</head>
+<body>
+  <div id="demo">
+    <div v-for="(item, index) in list" :key="index">
+      <item-box :data="item"></item-box>
+      <button @click="delClick(index)">删除</button>
+    </div>
+  </div>
+  <script>
+    Vue.component('item-box', {
+      template: '<span>{{data.msg}}</spam>',
+      props: ['data']
+    })
+    new Vue({
+      el: '#demo',
+      data(){
+        return {
+          list: [
+            {
+              msg: 'k1',
+              id: 1
+            },
+            {
+              msg: 'k2',
+              id: 2
+            },
+            {
+              msg: 'k3',
+              id:3
+            }
+          ]
+        }
+      },
+      methods: {
+        delClick (index) {
+          this.list.splice(index, 1)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+//http://www.qiutianaimeili.com/html/page/2019/12/fnpo81u8ni9.html
+1: 他是标准，浏览器默认加载不能胜率.js
+2: 兼容node环境下
+3: 模块的导入导出，通过import 和 export，可以和common.js模块混用
+4: ES modules输出的是值的引用动态接口, 而commonJS输出的是值的拷贝
+5: ES modules模块编译适执行，commoneJS模块运行时执行
+
+// ES modules特有的
+1: import 会被javascript引擎静态分析，优先于模块内部的其它内容执行
+2: export 有变量提升的效果
+3: 循环引用处理：
+    1: 程序先进入a.js, 执行import { count } from 'b.js', 进入'b.js'
+    2: b.js中执行 import { message } from 'a.js', 企图再次进入a.js, 但a.js已经请求过，
+       但是没有解析完，被标记为Fetching, (内部有一个Module Map, 如果解析完成就获取它的Module Record, 如果未执行完则标记未Fetching),
+       此时a.js中没有任何导出，无法获取message
+    3: b.js执行完毕，导出了count，在a.js（b.js的上层）中找到count，将它们链接起来(指向同一个地址)
+    4: 返回a.js中继续执行，导出了message，在b.js(a.js的上层）中找到message，将它们链接起来(指向同一个地址)
+    5: b.js中的setTimeout执行，得到了a.js中导出的message。
+
+
+
+
