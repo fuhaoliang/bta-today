@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="content_views" class="markdown_views prism-atom-one-light">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block"
+        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+    </svg>
+    <ol>
+      <li>webpack是什么？</li>
+      <li>webpack与grunt、gulp的不同？</li>
+      <li>webpack中什么是chunk？什么是bundle？</li>
+      <li>Webpack 五个核心概念分别是什么？</li>
+      <li>有哪些常见的Loader？它们是解决什么问题的？</li>
+      <li>有哪些常见的Plugin？它们是解决什么问题的？</li>
+      <li>webpack的构建流程是什么?</li>
+      <li>webpack的热更新是什么?</li>
+      <li>如何利用webpack来优化前端性能？</li>
+      <li>npm打包时需要注意哪些？如何利用webpack来更好的构建？</li>
+      <li>hash、chunkhash、contenthash三者的区别？</li>
+    </ol>
+    <hr>
+    <h4><a id="1webpack_14"></a>1.webpack是什么？</h4>
+    <ul>
+      <li>一种前端资源构建工具，一个静态模块打包器（nodule bundle）</li>
+      <li>前端所有资源文件（js/json/css/img…）都会作为模块处理</li>
+      <li>它将根据模块的依赖关系进行静态分析，打包生成对应的静态资源（bundle）</li>
+    </ul>
+    <h4><a id="2_webpackgruntgulp_19"></a>2. webpack与grunt、gulp的不同？</h4>
+    <ul>
+      <li>grunt和gulp是基于任务流（Task、Stream）的。类似jQuery，找到一个（或一类）文件，对其做一系列链式操作，整条链式操作构成了一个任务，多个任务就构成了整个web的构建流程</li>
+      <li>webpack是基于入口的。webpack会自动地递归解析入口所需要加载的所有资源文件，然后用不同的Loader来处理不同的文件，用Plugin来扩展webpack功能</li>
+    </ul>
+    <h4><a id="3_chunkbundle_24"></a>3. 什么是chunk？什么是bundle？</h4>
+    <ol>
+      <li>首先告诉 Webpack 一个入口文件，如 index.js 为起点作为打包，将入口文件的所有依赖项引入进来，这些依赖会跟入口文件形成一个文件（代码块），这个文件（代码块）就是
+        <strong>chunk</strong>
+      </li>
+      <li>将这个代码块（chunk）进行处理，比如把 less 文件编译成 css，js 资源编译成浏览器能识别的 js 语法等等操作，这些就叫做打包，将打包好的资源再输出出去，这个输出的文件就叫
+        <strong>bundle</strong>
+      </li>
+    </ol>
+    <h4><a id="4_Webpack__28"></a>4. Webpack 五个核心概念分别是什么？</h4>
+    <ol>
+      <li>
+        <p><strong>Entry</strong></p>
+        <p>入口（Entry）指示 Webpack 以哪个文件为入口起点开始打包，分析内部构件依赖图</p>
+      </li>
+      <li>
+        <p><strong>Output</strong></p>
+        <p>输出（Output）指示 Webpack 打包后的资源 bundles 输出到哪里去，以及如何命名</p>
+      </li>
+      <li>
+        <p><strong>Loader</strong></p>
+        <p>Loader 能让 Webpack 处理非 JavaScript/json 文件（Webpack 自身只能处理 JavaScript/json ）</p>
+      </li>
+      <li>
+        <p><strong>Plugins</strong></p>
+        <p>插件（Plugins）可以用于执行范围更广的任务，包括从打包优化和压缩到重新定义环境中的变量</p>
+      </li>
+      <li>
+        <p><strong>Mode</strong></p>
+        <p>模式(Mode)指示 Webpack 使用相应模式的配置，只有development（开发环境）和production（生产环境）两种模式</p>
+      </li>
+    </ol>
+    <h4><a id="5Loader_50"></a>5.有哪些常见的Loader？它们是解决什么问题的？</h4>
+    <ol>
+      <li>css-loader：将 css 文件变成 CommonJS 模块加载 js 中，里面内容是样式字符串</li>
+      <li>style-loader：创建 style 标签，将 js 中的样式资源插入进行，添加到 head 中生效</li>
+      <li>url-loader：在文件很小的情况下以 base64 的方式把文件内容注入到代码中去</li>
+      <li>file-loader：打包其他资源（除了css/js/html 资源）</li>
+      <li>html-loader：处理 html 文件中的 img</li>
+      <li>babel-loader：把 ES6 转换成 ES5</li>
+      <li>eslint-loader：通过 ESLint 检查 JavaScript 代码</li>
+    </ol>
+    <h4><a id="6Plugin_59"></a>6.有哪些常见的Plugin？它们是解决什么问题的？</h4>
+    <ol>
+      <li>html-webpack-plugin：可以复制一个有结构的html文件，并自动引入打包输出的所有资源（JS/CSS）</li>
+      <li>clean-webpack-plugin：重新打包自动清空 dist 目录</li>
+      <li>mini-css-extract-plugin：提取 js 中的 css 成单独文件</li>
+      <li>optimize-css-assets-webpack-plugin：压缩css</li>
+      <li>uglifyjs-webpack-plugin：压缩js</li>
+      <li>commons-chunk-plugin：提取公共代码</li>
+    </ol>
+    <h4><a id="7webpack_67"></a>7.webpack的构建流程是什么?</h4>
+    <ol>
+      <li>初始化参数：从配置文件和 Shell 语句中读取与合并参数，得出最终的参数；</li>
+      <li>开始编译：用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译；</li>
+      <li>确定入口：根据配置中的 entry 找出所有的入口文件；</li>
+      <li>编译模块：从入口文件出发，调用所有配置的 Loader 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理；</li>
+      <li>完成模块编译：在经过第4步使用 Loader 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系；</li>
+      <li>输出资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 Chunk，再把每个 Chunk 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会；</li>
+      <li>输出完成：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统</li>
+    </ol>
+    <h4><a id="8webpack_76"></a>8.webpack的热更新是什么？</h4>
+    <p>热更新又称热替换（Hot Module Replacement），缩写为HMR，基于devServer，生产环境不需要devServer，所以生产环境不能用HMR功能</p>
+    <p><strong>作用：</strong><br> 优化打包构建速度，一个模块发生变化，只会重新打包这一个模块（而不是打包所有模块），极大提升构建速度</p>
+    <ul>
+      <li>
+        <p>样式文件：可以使用HMR功能，因为style-loader内部实现了</p>
+      </li>
+      <li>
+        <p>JS文件：默认没有HMR功能，需要修改js代码，添加支持HMR功能。入口文件做不了HMR功能，只能处理非入口js文件</p>
+      </li>
+      <li>
+        <p>HTML文件：默认没有HMR功能，同时会导致 html 文件不能热更新（即修改没有任何反应）</p>
+        <p><strong>解决方案：</strong></p>
+        <p>修改entry入口，将html文件引入</p>
+        <pre
+          class="prettyprint"><code class="prism language-javascript has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;"> entry<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'./src/js/index.js'</span><span class="token punctuation">,</span><span class="token string">'./src/index.html'</span><span class="token punctuation">]</span>
+<div class="hljs-button {2}" data-title="复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li></ul></pre>
+        <p>不用做HMR功能，因为只有一个html文件</p>
+      </li>
+    </ul>
+    <h4><a id="9webpack_96"></a>9.如何利用webpack来优化前端性能？</h4>
+    <p>开发环境下：</p>
+    <ol>
+      <li>开启HMR功能，优化打包构建速度</li>
+      <li>配置 devtool: ‘source-map’，优化代码运行的性能</li>
+    </ol>
+    <p>生产环境下：</p>
+    <ol>
+      <li>oneOf 优化<br> 默认情况下，假设设置了7、8个loader，每一个文件都得通过这7、8个loader处理（过一遍），浪费性能，使用 oneOf 找到了就能直接用，提升性能</li>
+      <li>开启 babel 缓存<br> 当一个 js 文件发生变化时，其它 js 资源不用变</li>
+      <li>code split 分割<br> 将js文件打包分割成多个bundle，避免体积过大</li>
+      <li>懒加载和预加载</li>
+      <li>PWA 网站离线访问</li>
+      <li>多进程打包<br> 开启多进程打包，主要处理js文件（babel-loader干的活久），进程启动大概为600ms，只有工作消耗时间比较长，才需要多进程打包，提升打包速度</li>
+      <li>dll 打包第三方库
+        <ul>
+          <li>code split将第三方库都打包成一个bundle，这样体积过大，会造成打包速度慢</li>
+          <li>dll 是将第三方库打包成多个bundle，从而进行速度优化</li>
+        </ul>
+      </li>
+    </ol>
+    <h4><a id="10npmwebpack_119"></a>10.npm打包时需要注意哪些？如何利用webpack来更好的构建？</h4>
+    <p><strong>NPM模块需要注意以下问题：</strong></p>
+    <ol>
+      <li>要支持CommonJS模块化规范，所以要求打包后的最后结果也遵守该规则</li>
+      <li>Npm模块使用者的环境是不确定的，很有可能并不支持ES6，所以打包的最后结果应该是采用ES5编写的。并且如果ES5是经过转换的，请最好连同SourceMap一同上传</li>
+      <li>Npm包大小应该是尽量小（有些仓库会限制包大小）</li>
+      <li>发布的模块不能将依赖的模块也一同打包，应该让用户选择性的去自行安装。这样可以避免模块应用者再次打包时出现底层模块被重复打包的情况</li>
+      <li>UI组件类的模块应该将依赖的其它资源文件，例如.css文件也需要包含在发布的模块里</li>
+    </ol>
+    <p><strong>webpack配置做以下扩展和优化：</strong></p>
+    <ol>
+      <li>CommonJS模块化规范的解决方案： 设置output.libraryTarget='commonjs2’使输出的代码符合CommonJS2 模块化规范，以供给其它模块导入使用</li>
+      <li>输出ES5代码的解决方案：使用babel-loader把 ES6 代码转换成 ES5 的代码。再通过开启devtool: 'source-map’输出SourceMap以发布调试。</li>
+      <li>Npm包大小尽量小的解决方案：Babel 在把 ES6 代码转换成 ES5
+        代码时会注入一些辅助函数，最终导致每个输出的文件中都包含这段辅助函数的代码，造成了代码的冗余。解决方法是修改.babelrc文件，为其加入transform-runtime插件</li>
+      <li>不能将依赖模块打包到NPM模块中的解决方案：使用externals配置项来告诉webpack哪些模块不需要打包。</li>
+      <li>对于依赖的资源文件打包的解决方案：通过css-loader和extract-text-webpack-plugin来实现</li>
+    </ol>
+    <h4><a id="11hashchunkhashcontenthash_133"></a>11.hash、chunkhash、contenthash三者的区别？</h4>
+    <p>浏览器访问网站后会强缓存资源，第二次刷新就不会请求服务器（一般会定个时间再去请求服务器），假设有了bug改动了文件，但是浏览器又不能及时请求服务器，所以就用到了文件资源缓存（改变文件名的hash值）</p>
+    <ol>
+      <li>
+        <p>hash：不管文件变不变化，每次wepack构建时都会生成一个唯一的hash值</p>
+      </li>
+      <li>
+        <p>chunkhash：根据chunk生成的hash值。如果打包来源于同一个chunk，那么hash值就一样</p>
+        <p>问题：js和css同属于一个chunk，修改css，js文件同样会被打爆</p>
+      </li>
+      <li>
+        <p>contenthash：根据文件的内容生成hash值。不同文件hash值一定不一样</p>
+      </li>
+    </ol>
+  </div>
+</body>
+
+</html>
