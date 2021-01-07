@@ -26,11 +26,22 @@ https://www.cnblogs.com/liuming666/p/12470522.html
     4: 完成解析响应内容
      
 22.模块化开发怎么做
+   
 23.异步加载Js的方式有哪些
+  1: <script src="" async></script>, 但是会堵塞onload的触发
+  2: onload后异步加载
+  3: <script src="" defer></script>, 延迟脚本,onload之后加载
+  defer 一定是等到DOMContentLoad完毕之后再执行
+24.onload,onready
+   onready实现原理: DOMContentLoaded事件 / document.documentElement.doScroll轮训判定
+   https://blog.csdn.net/zyj0209/article/details/79698430
 
 
 1.什么是 vue 生命周期
 2.vue生命周期的作用是什么
+https://juejin.cn/post/6844903589035376647
+https://segmentfault.com/a/1190000011486619
+
 3.第一次页面加载会触发哪几个钩子
 4.简述每个周期具体适合哪些场景
 5.created和mounted的区别
