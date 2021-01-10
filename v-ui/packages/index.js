@@ -1,6 +1,7 @@
-import VButton from "./VButton";
+import VButton from "./components/VButton";
+import VInput from "./components/VInput";
 
-const components = [VButton];
+const components = [VButton, VInput];
 
 const install = function(Vue) {
   if (install.instaned) return;
