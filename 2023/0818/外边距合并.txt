@@ -1,8 +1,0 @@
-css 外边距合并
-    当两个垂直外边距相遇，合并外边距当高度等于两个中当较大当那个
-
-1: 父子： 父子元素，合并较大当那个，并且作用在父元素上
-   解决：1：overflow: hidden/auto(body元素除外)
-        2: boder:1px solid red
-2: 兄弟元素： 当不设置float/position:absolute时，margin-bottom和margin-top会合并为两者中的最大值
-   解决：构建不同当bfc域
