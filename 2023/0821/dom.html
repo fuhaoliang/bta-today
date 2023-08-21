@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>操作dom</p>
+        <div id="insert"></div>
+        <div id="replace">我要被替换了</div>
+        <div id="clone">
+            我是拷贝元素 <span>子元素</span>
+        </div>
+    </div>
+    <script>
+        var boxDOM = document.querySelector('#box')
+        // 增加
+        var newDOM = document.createElement('p')
+            // newDOM.innerText = '新增'
+        var text = document.createTextNode('我是新增')
+        newDOM.appendChild(text)
+        boxDOM.appendChild(newDOM)
+        // // 删除
+        setTimeout(() => {
+           boxDOM.removeChild(newDOM)
+        }, 2000)
+        // 插入
+        var insertDOM = document.createElement('h1')
+            insertDOM.innerText = '插入元素'
+        boxDOM.insertBefore(insertDOM, document.querySelector('#insert'))
+
+        // 修改
+        
+        // 替换
+
+        var replaceDOM = document.createElement('h1')
+            replaceDOM.innerText = '我是替换的DOM'
+        setTimeout(() => {
+            boxDOM.replaceChild(replaceDOM, document.querySelector('#replace'))
+        }, 2000)
+
+        // 拷贝
+
+        var cloneDOM = document.querySelector('#clone').cloneNode(true)
+
+        // cloneNode true 子元素也clone, 但是默认是false
+        
+        setTimeout(() => {
+            boxDOM.appendChild(cloneDOM)
+        }, 2000)
+
+    </script>
+</body>
+</html>

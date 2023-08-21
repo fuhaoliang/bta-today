@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 200px;
+            height: 240px;
+            background-color: red;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .border{
+            position: relative;
+        }
+
+        .border::after{
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 200%;
+            height: 200%;
+            border: 1px solid #000;
+            transform: scale(.5);
+            transform-origin: left top;
+        }
+
+        @media only screen and (-wekbit-min-device-pixel-radio: 2.0)   {
+            
+        }
+
+        @media only screen and (-wekbit-min-device-pixel-radio: 3.0)   {
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box" class="border">
+
+    </div>
+</body>
+</html>
