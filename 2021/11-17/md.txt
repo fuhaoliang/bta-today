@@ -44,7 +44,11 @@
   1: ES6: import / export
   2: CommonJS: require / module.export
   3: AMD: 提前执行 define(['/a','/b'], function(a,b){})
+    优点：适合在浏览器环境中异步加载模块。可以并行加载多个模块。
+    缺点：提高了开发成本，并且不能按需加载，而是必须提前加载所有的依赖。
   4: CMD: 延迟执行 define(require, exports, module)
+    优点：同样实现了浏览器端的模块化加载。可以按需加载，依赖就近。
+    缺点：依赖SPM打包，模块的加载逻辑偏重。
   5: UMD: 通用模块定义规范（Universal Module Definition）是集结了 CommonJs、CMD、AMD 的规范于一身
           挂载在window或者global，视运行环境而定
 

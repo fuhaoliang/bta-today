@@ -40,8 +40,18 @@
 
 11.如何改变函数内部的this指针的指向
 12.列举几种解决跨域问题的方式，且说明原理
-  1: 联调： nginx代理，webapckp-proxy代理
+  1: 联调： nginx代理，webpack-proxy代理
   2: jsonp
 
 1.给一个连字符串例如：get-element-by-id转化成驼峰形式。
+
+function toCamelCase(str) {
+  return str.replace(/-([a-z])/g, function(match, letter) {
+    return letter.toUpperCase();
+  });
+}
+
+let str = "get-element-by-id";
+let camelCaseStr = toCamelCase(str);
+console.log(camelCaseStr);
 2.匹配二进制数字

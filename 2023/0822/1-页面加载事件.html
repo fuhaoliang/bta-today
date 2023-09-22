@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面加载事件</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.info('DOMContentLoaded ->', '初始化DOM 并解析')
+    })
+
+    document.onreadystatechange = () => {
+      console.info('readyState', document.readyState)
+      if (document.readyState === "complete") {
+        console.info('complete', '初始化DOM并且解析完成')
+      }
+   }
+
+   window.addEventListener('load', () => {
+      console.info('load', '所有资源加载完毕')
+   })
+
+   window.addEventListener('beforeunload', (event) => {
+      console.info('beforeunload', '页面即将关闭')
+      return event.returnValue = "亲～，要关闭么";
+   })
+
+   window.addEventListener('unload', () => {
+      console.info('unload', '页面关闭了')
+   })
+
+  </script>
+  <link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.compat.css" rel="stylesheet">
+</head>
+<body>
+  <div id="root">root</div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</body>
+</html>

@@ -21,6 +21,7 @@
    .json: 用于页面/小程序到配置设置
    .wxml: html
    .wxss: css3
+   .wxs: 过滤器
    .js: js脚步逻辑
 
 
@@ -51,3 +52,6 @@ vue对双向绑定/compile/diff
 1: https://www.jianshu.com/p/743166a8968c --> compile
 2: https://www.cnblogs.com/canfoo/p/6891868.html --->对双向绑定
 
+在vue中，如果使用vuex，实际上数据还是单向的，之所以说是数据双向绑定，这是用的UI控件来说，对于我们处理表单，vue的双向数据绑定用起来就特别舒服了。
+
+即两者并不互斥， 在全局性数据流使用单项，方便跟踪； 局部性数据流使用双向，简单易操作。

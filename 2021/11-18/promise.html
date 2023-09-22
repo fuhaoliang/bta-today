@@ -1,8 +1,19 @@
-var Promise = function(fn) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>123</h1>
+  <script>
+    var Promise = function(fn) {
   var state = 'pending'
   var doneList = []
   var failList = []
   this.then = function(done, fail) {
+    console.info('then~~~')
     switch(state) {
       case 'pending':
         doneList.push(done)
@@ -16,7 +27,9 @@ var Promise = function(fn) {
         return this
     }
   }
-
+  // this.catch = function(onRejected) {
+  //   return this.then(null, onRejected);
+  // };
 
   function resolve(value) {
     state = 'fulfilled'
@@ -41,7 +54,7 @@ var Promise = function(fn) {
           tempRe.then(doneList[i], failList[i])
         }
       } else {
-        doneList.unshift()
+        doneList.shift()
         failList.unshift()
         resolve(tempRe)
       }
@@ -50,3 +63,28 @@ var Promise = function(fn) {
 
   fn(resolve, reject)
 }
+
+var promiFn = function (resolve, reject) {
+    setTimeout(function () {
+        // resolve(1)
+        reject(123)
+    }, 0)
+};
+new Promise(promiFn)
+.then((d) => {
+    console.log(d)   
+}, (cc) => {
+  console.info('ccc', cc)
+})
+
+
+  function toCamelCase(str) {
+    return str.replace(/-[a-z]/g, (match, letter) => {
+      return letter.toUpperCase()
+    })
+  }
+
+
+  </script>
+</body>
+</html>

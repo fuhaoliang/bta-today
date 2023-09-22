@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+ const observer = new PerformanceObserver((list) => {
+  for(const entry of list.getEntries()){
+   console.groupCollapsed(entry.name);
+   console.log(entry.entryType);
+   console.log(entry.startTime);
+   console.log(entry.duration);
+   console.groupEnd(entry.name);
+  }
+ }) 
+ observer.observe({entryTypes:['longtask','frame','navigation','resource','mark','measure','paint']});
+</script>
+
+  </script>
+</head>
+<body>
+ <h1>11111</h1>
+ <input type="text" name="" id="">
+ <script>
+  // setTimeout(() => {
+  //   console.info('11111')
+  //   const observer = new PerformanceObserver((list) => {
+  //     for (const entry of list.getEntries()) {
+  //       // `entry` is a PerformanceEntry instance.
+  //       console.log(entry.entryType);
+  //       console.log(entry.startTime);
+  //       console.log(entry.duration);
+  //     }
+  //   });
+  //   observer.observe({entryTypes: ['longtask']});
+  // }, 2000)
+ </script>
+</body>
+</html>

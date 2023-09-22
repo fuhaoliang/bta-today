@@ -5,35 +5,21 @@
   2:IE/怪异模型: width = content + padding + border / box-sizing: border-box
   * box-sizing 不会继承给子类元素
 
-  offsetTop: 距离定位父元素到距离
-  getBoundingClientReact().top:距离可视区域到高度
+  3: offsetWidth = content + padding + border
+     clientWidth = content
 
-2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？行内元素和块级元素有什么区别？
-  块内元素：address,meun,header,footer, p ,div, h1,h2, ul/li ,table,tr
-    1：识别宽高
-    2：margin/padding都有效
-    3：自占一行, 自动换行
-  行内元素：span,i, b, a, em, strong, select, input,label
-    1: 不识别宽高,由内容撑起来,line-height有效
-    2: marign/padding的top,bottom无效
-    3: 不可以自动换行
-  行内块元素： img, input, textarea,button
-    1: 识别宽高
-    2: 不可以自动换行
+  4: getBoundingClientRect 与 clientWidth的区别:
+     1> 前者可以精确到小数，后者精确到整数；
+     2> 前者相对于视口（viewport）位置, 后者相对于文档（document）位置；
+     3> offsetParent 可以获取基于父亲元素的相关数据；
 
-  空元素: link, meta, br, hr, img, 自闭合标签
+2:修改元素的属性的方法
+  1: setAttribute: 可以修改标准属性和自定义属性
+  2: 直接修改属性：只可以修改标准属性
 
-
-3.简述src和href的区别
-  1:href超文本引用只是建立联系
-  2:src引用外部资源替换当前元素
-  3:href异步加载，script下的src加载与解析同步堵塞
-
-4.link与@import的区别
-  1:@import 只能加载css
-  2:link是异步并行加载当,css树会堵塞，@import必须等到页面加载完加载，会闪屏
-  3:@import css2.1才支持有兼容问题
-  4:link已经通过setAttribute去改变，加载的css文件
+3:获取元素的样式都方法
+  1: style - 只能获取内联样式都方法
+  2: getComputedStyle(dom) / currentStyle - 获取元素最终的样式表
 
 
 1.注册小程序

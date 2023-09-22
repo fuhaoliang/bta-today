@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      margin: 20px;
+      border: 2px solid #000;
+      padding: 16px;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .content{
+      box-sizing: content-box;
+      background: red;
+    }
+
+    .border{
+      box-sizing: border-box;
+      background: green;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    标准盒模型
+  </div>
+  <div class="border">
+    怪异盒模型
+  </div>
+</body>
+<script>
+  const contentDom = document.querySelector('.content')
+  const borderDom = document.querySelector('.border')
+</script>
+</html>
